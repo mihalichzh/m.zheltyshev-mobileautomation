@@ -61,7 +61,7 @@ public class FirstTest {
                 By.id("org.wikipedia:id/search_close_btn"),
                 "Can't click on X button!",
                 5
-        );*/
+        );
 
         waitForElementIsNotPresent(
                 By.id("org.wikipedia:id/search_results_list"),
