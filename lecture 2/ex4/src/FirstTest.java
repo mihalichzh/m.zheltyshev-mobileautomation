@@ -5,14 +5,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
+import java.util.List;
 
 public class FirstTest {
 
@@ -38,186 +37,26 @@ public class FirstTest {
         driver.quit();
     }
 
-    @Test
-    public void ex2() {
-        waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Can't click on Search Field!",
-                5
-        );
-
-        //Далее идет функция, проверяющая наличие текста "Search..." в строке поиска перед вводом текста:
-        checkForTextSearchAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Java",
-                "Can't fill in Search Input!",
-                5
-        );
-
-        String text_in_search_field = waitForElementPresent(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Can't get text from Search Field!",
-                5
-        ).getAttribute("text");
-        Assert.assertEquals(
-                "Text in Search Field if unexpected!",
-                "Java",
-                text_in_search_field
-        );
-    }
 
     @Test
-    public void ex3() {
-        waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Can't click on Search Field!",
-                5
-        );
+    public void ex4() {
 
-        waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Test",
-                "Can't fill in Search Input!",
-                5
-        );
-
-        waitForElementPresent(
-                By.id("org.wikipedia:id/search_results_list"),
-                "Search result list is not present!",
-                5
-        );
-
-        waitForElementAndClick(
-                By.id("org.wikipedia:id/search_close_btn"),
-                "Can't click on X button!",
-                5
-        );
-
-        waitForElementIsNotPresent(
-                By.id("org.wikipedia:id/search_results_list"),
-                "Search result list is present!",
-                5
-        );
-
-        Assert.assertNotEquals(
-                "Search empty message is not displayed!",
-                0,
-                driver.findElements(By.id("org.wikipedia:id/search_empty_message")).size()
-        );
-    }
-
-    @Test
-    public void firstTest() {
+        //Переменная ввода текста поискового запроса:
+        String search_que = "Java";
 
         waitForElementAndClick(
                 By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
                 "Can't click on Search Field!",
                 5
         );
-
         waitForElementAndSendKeys(
                 By.xpath("//*[contains(@text, 'Search…')]"),
-                "Java",
-                "Can't fill in Search Input!",
-                5
-        );
-        waitForElementPresent(
-                By.xpath("//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text = 'Object-oriented programming language']"),
-                "Can't find the entry!",
-                15
-        );
-
-        String search_query_text = waitForElementPresent(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Can't get text from search field!",
-                5
-        ).getAttribute("text");
-
-        Assert.assertEquals(
-                "Text in search filed is not expected!",
-                "Java",
-                search_query_text
-        );
-    }
-
-    @Test
-    public void testCancelSearch() {
-        waitForElementAndClick(
-                By.id("org.wikipedia:id/search_container"),
-                "Can't find Search Input!",
-                5
-        );
-
-        waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Java",
+                search_que,
                 "Can't fill in Search Input!",
                 5
         );
 
-        waitForElementAndClear(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Can't clear Input",
-                5
-        );
-
-        waitForElementAndClick(
-                By.id("org.wikipedia:id/search_close_btn"),
-                "Can't click on X button!",
-                5
-        );
-        waitForElementIsNotPresent(
-                By.id("org.wikipedia:id/search_close_btn"),
-                "Button X is still presented!",
-                5
-        );
-
-        WebElement search_field_on_main_page = waitForElementPresent(
-                By.xpath("//*[contains(@resource-id, 'org.wikipedia:id/search_container')]//*[@index = '1']"),
-                "Can't find Search Field!",
-                10
-        );
-        Assert.assertEquals(
-                "Can't get text from main page search field!",
-                "Search Wikipedia",
-                search_field_on_main_page.getAttribute("text")
-        );
-    }
-
-    @Test
-    public void testCompareArticleTitle() {
-        waitForElementAndClick(
-                By.id("org.wikipedia:id/search_container"),
-                "Can't find Search Input!",
-                5
-        );
-
-        waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Java",
-                "Can't fill in Search Input!",
-                5
-        );
-
-        waitForElementAndClick(
-                By.xpath("//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text = 'Object-oriented programming language']"),
-                "Can't find Entry!",
-                5
-        );
-
-        WebElement title_element = waitForElementPresent(
-                By.id("org.wikipedia:id/view_page_title_text"),
-                "Can't find article title!",
-                20
-        );
-
-        String article_title = title_element.getAttribute("text");
-
-        Assert.assertEquals(
-                "Title is Wrong!",
-                "Java (programming language)",
-                article_title
-        );
+        Assert.assertTrue(isSearchResultsContainText(search_que));
 
     }
 
@@ -226,10 +65,6 @@ public class FirstTest {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_msg + "\n");
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
-    }
-
-    private WebElement waitForElementPresent(By by, String error_msg) {
-        return waitForElementPresent(by, error_msg, 5);
     }
 
     private WebElement waitForElementAndClick(By by, String error_msg, long timeoutInSeconds) {
@@ -268,5 +103,21 @@ public class FirstTest {
                 search_field_element.getAttribute("text")
         );
         return waitForElementAndSendKeys(by, value, error_msg, timeoutInSeconds);
+    }
+
+    private boolean isSearchResultsContainText(String value) {
+        waitForElementPresent(
+                By.id("org.wikipedia:id/search_results_list"),
+                "No search results available!",
+                5
+        );
+        List<WebElement> results = driver.findElements(By.id("org.wikipedia:id/page_list_item_title"));
+        for (WebElement element : results) {
+            String text = element.getAttribute("text");
+            if (!text.toLowerCase().contains(value.toLowerCase())) {
+                return false;
+            }
+        }
+        return true;
     }
 }
