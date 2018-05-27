@@ -90,10 +90,5 @@ public class FirstTest {
                 "Can't find element with expected text Search...",
                 5
         );
-        Assert.assertEquals(
-                "Text in Search Field before sending keys is not expected",
-                "Search…",
-                search_field_element.getAttribute("text")
-        );
     }
 }
