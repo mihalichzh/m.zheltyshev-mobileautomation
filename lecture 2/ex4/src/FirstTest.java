@@ -56,10 +56,8 @@ public class FirstTest {
                 5
         );
 
-        Assert.assertTrue(isSearchResultsContainText(search_que));
-
+        checkTitles(getListOfSearchResultTitles(), search_que);
     }
-
 
     private WebElement waitForElementPresent(By by, String error_msg, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -105,19 +103,20 @@ public class FirstTest {
         return waitForElementAndSendKeys(by, value, error_msg, timeoutInSeconds);
     }
 
-    private boolean isSearchResultsContainText(String value) {
+    private List<WebElement> getListOfSearchResultTitles() {
         waitForElementPresent(
-                By.id("org.wikipedia:id/search_results_list"),
-                "No search results available!",
+                By.id("org.wikipedia:id/page_list_item_title"),
+                "No search result titles available!",
                 5
         );
-        List<WebElement> results = driver.findElements(By.id("org.wikipedia:id/page_list_item_title"));
+        return driver.findElements(By.id("org.wikipedia:id/page_list_item_title"));
+    }
+
+    private void checkTitles (List<WebElement> results, String value) {
         for (WebElement element : results) {
             String text = element.getAttribute("text");
-            if (!text.toLowerCase().contains(value.toLowerCase())) {
-                return false;
-            }
+            Assert.assertTrue("Title doesn't contain search que text!",
+                    text.toLowerCase().contains(value.toLowerCase()));
         }
-        return true;
     }
 }
