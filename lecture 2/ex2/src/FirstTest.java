@@ -45,12 +45,7 @@ public class FirstTest {
         );
 
         //Далее идет функция, проверяющая наличие текста "Search..." в строке поиска перед вводом текста:
-        checkForTextSearchAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Java",
-                "Can't fill in Search Input!",
-                5
-        );
+        checkForTextSearchAndSendKeys();
     }
 
 
@@ -88,10 +83,11 @@ public class FirstTest {
         return element;
     }
 
-    private WebElement checkForTextSearchAndSendKeys (By by, String value, String error_msg, long timeoutInSeconds) {
+
+    private void checkForTextSearchAndSendKeys () {
         WebElement search_field_element = waitForElementPresent(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Can't fill in Search Input!",
+                By.xpath("//*[@text = 'Search…']"),
+                "Can't find element with expected text Search...",
                 5
         );
         Assert.assertEquals(
@@ -99,6 +95,5 @@ public class FirstTest {
                 "Search…",
                 search_field_element.getAttribute("text")
         );
-        return waitForElementAndSendKeys(by, value, error_msg,timeoutInSeconds);
     }
 }
