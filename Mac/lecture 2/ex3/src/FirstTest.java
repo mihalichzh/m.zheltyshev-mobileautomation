@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
-import java.util.List;
 
 public class FirstTest {
 
@@ -58,7 +57,8 @@ public class FirstTest {
                 5
         );
 
-        checkForFewSearchResultsIsPresented();
+        //Проверяем, что результатов поиска несколько ( >=2):
+        checkForFewSearchResultsArePresented();
 
         waitForElementAndClick(
                 By.id("org.wikipedia:id/search_close_btn"),
@@ -123,7 +123,7 @@ public class FirstTest {
         return waitForElementAndSendKeys(by, value, error_msg,timeoutInSeconds);
     }
 
-    private void checkForFewSearchResultsIsPresented () {
+    private void checkForFewSearchResultsArePresented() {
         int numberOfSearchResults = driver.findElements(By.id("org.wikipedia:id/page_list_item_container")).size();
         Assert.assertTrue("Number of search results is less than a few!",numberOfSearchResults >=2 );
     }
