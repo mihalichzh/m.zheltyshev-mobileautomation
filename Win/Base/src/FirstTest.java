@@ -31,6 +31,10 @@ public class FirstTest {
         capabilities.setCapability("app",
                 "C:\\Users\\mihal\\Documents\\GitHub\\m.zheltyshev-mobileautomation\\Win\\Base\\apks\\org.wikipedia.apk");
 
+        //Capability для установки ориентации экрана по умолчанию:
+        capabilities.setCapability("orientation", "LANDSCAPE");
+        //capabilities.setCapability("orientation", "LANDSCAPE");
+
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
 
@@ -41,8 +45,9 @@ public class FirstTest {
 
 
     @Test
-    public void firstTest() {
+    public void ex7() {
 
+        //Ориентация экрана будет установлена при инициализации драйвера в соответствии с заданным capability "orientation"
         waitForElementAndClick(
                 By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
                 "Can't click on Search Field!",
@@ -214,7 +219,7 @@ public class FirstTest {
         waitForElementPresent(
                 By.id("org.wikipedia:id/view_page_title_text"),
                 "Can't find article title!",
-                20
+                5
         );
 
         waitForElementAndClick(
@@ -273,7 +278,7 @@ public class FirstTest {
         );
 
         swipeElementToLeft(
-                By.xpath("//org.wikipedia:id/item_tit[@resource-id='Learning programming']"),
+                By.xpath("//org.wikipedia:id/item_title[@text='Learning programming']"),
                 "Can't find saved article!"
         );
 
