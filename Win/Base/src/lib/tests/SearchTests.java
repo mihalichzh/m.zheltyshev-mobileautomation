@@ -7,7 +7,7 @@ import org.junit.Test;
 public class SearchTests extends CoreTestCase {
 
     @Test
-    public void amountOfNotEmptySearch() {
+    public void testamountOfNotEmptySearch() {
         SearchPageObject searchPageObject = new SearchPageObject(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Linkin Park Diskography");
@@ -22,5 +22,15 @@ public class SearchTests extends CoreTestCase {
         searchPageObject.waitForCancelButtonToAppear();
         searchPageObject.clickCancelButton();
         searchPageObject.waitForCancelButtonToDissappear();
+    }
+
+    @Test
+    public void testCancelSearch_ex3_refactored() {
+        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine("Test");
+        searchPageObject.checkSearchResultsListForFewArticles();
+        searchPageObject.clickCancelButton();
+        searchPageObject.checkSearchResultsListIsNotPresent();
     }
 }

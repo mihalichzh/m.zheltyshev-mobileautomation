@@ -8,7 +8,6 @@ import org.junit.Test;
 
 public class ArticleTests extends CoreTestCase {
 
-
     @Test
     public void testSearchArticle() {
         SearchPageObject searchPageObject = new SearchPageObject(driver);
@@ -43,6 +42,5 @@ public class ArticleTests extends CoreTestCase {
         searchPageObject.clickByArticleWithSubstring("Appium");
         articlePageObject.waitForTitleElement();
         articlePageObject.swipeArticleToFooter();
-
     }
 }

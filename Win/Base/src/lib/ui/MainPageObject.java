@@ -134,4 +134,17 @@ public class MainPageObject {
                 .perform();
 
     }
+
+    public void checkForFewSearchResultsArePresented() {
+        int numberOfSearchResults = driver.findElements(By.id("org.wikipedia:id/page_list_item_container")).size();
+        Assert.assertTrue("Number of search results is less than a few!",numberOfSearchResults >=2 );
+    }
+
+    public void checkForSearchResultAreEmpty() {
+        waitForElementIsNotPresent(
+                By.id("org.wikipedia:id/search_results_list"),
+                "Search result list is present!",
+                5
+        );
+    }
 }

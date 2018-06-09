@@ -3,6 +3,9 @@ package lib;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -10,11 +13,12 @@ import java.net.URL;
 
 public class CoreTestCase extends TestCase {
 
-    protected AppiumDriver driver;
-    protected WebDriverWait waitd;
-    private static String AppiumURL = "http://127.0.0.1:4723/wd/hub";
+    public AppiumDriver driver;
+    public WebDriverWait waitd;
+    public static String AppiumURL = "http://127.0.0.1:4723/wd/hub";
 
-    public void setUP() throws Exception {
+    @Override
+    public void setUp() throws Exception {
         super.setUp();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformNamee", "Android");
@@ -36,8 +40,7 @@ public class CoreTestCase extends TestCase {
 
     @Override
     public void tearDown() throws Exception {
-        super.tearDown();
+        //super.tearDown();
         driver.quit();
     }
-
 }
