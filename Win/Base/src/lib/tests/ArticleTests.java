@@ -34,7 +34,6 @@ public class ArticleTests extends CoreTestCase {
 
     @Test
     public void testSwipeArticle() {
-
         SearchPageObject searchPageObject = new SearchPageObject(driver);
         ArticlePageObject articlePageObject = new ArticlePageObject(driver);
         searchPageObject.initSearchInput();
