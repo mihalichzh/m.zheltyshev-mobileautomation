@@ -9,13 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 import java.util.List;
 
 public class MainPageObject {
 
-    public AppiumDriver driver;
-    public WebDriverWait wait;
+    protected AppiumDriver driver;
 
     public MainPageObject(AppiumDriver driver)
     {
@@ -23,7 +21,7 @@ public class MainPageObject {
     }
 
     public WebElement waitForElementPresent(By by, String error_msg, long timeoutInSeconds) {
-        wait = new WebDriverWait(driver, timeoutInSeconds);
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_msg + "\n");
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
@@ -135,5 +133,22 @@ public class MainPageObject {
                 .release()
                 .perform();
 
+    }
+
+    public void checkForFewSearchResultsArePresented() {
+        int numberOfSearchResults = driver.findElements(By.id("org.wikipedia:id/page_list_item_container")).size();
+        Assert.assertTrue("Number of search results is less than a few!",numberOfSearchResults >=2 );
+    }
+
+    public void checkForSearchResultAreEmpty() {
+        waitForElementIsNotPresent(
+                By.id("org.wikipedia:id/search_results_list"),
+                "Search result list is present!",
+                5
+        );
+    }
+
+    protected void assertElementPresent (By by) {
+        Assert.assertTrue("Can't find article's title!", driver.findElements(by).size() >= 1);
     }
 }

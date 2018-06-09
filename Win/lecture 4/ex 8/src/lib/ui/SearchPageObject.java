@@ -9,7 +9,8 @@ public class SearchPageObject extends MainPageObject {
         SEARCH_INIT_ELEMENT = "//*[contains(@text, 'Search Wikipedia')]",
         SEARCH_INPUT = "//*[contains(@text, 'Search…')]",
         SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn",
-        SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text = '{SUBSTRING}']";
+        SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text = '{SUBSTRING}']",
+        SEARCH_RESULTS_LIST = "org.wikipedia:id/search_results_list";
 
     public SearchPageObject(AppiumDriver driver) {
         super(driver);
@@ -57,4 +58,12 @@ public class SearchPageObject extends MainPageObject {
         );
     }
 
+    public void checkSearchResultsListForFewArticles() {
+        this.checkForFewSearchResultsArePresented();
+    }
+
+    public void checkSearchResultsListIsNotPresent () {
+
+        this.checkForSearchResultAreEmpty();
+    }
 }
