@@ -63,7 +63,7 @@ public class SearchPageObject extends MainPageObject {
     }
 
     public void checkSearchResultsListIsNotPresent () {
+
         this.checkForSearchResultAreEmpty();
     }
-
 }

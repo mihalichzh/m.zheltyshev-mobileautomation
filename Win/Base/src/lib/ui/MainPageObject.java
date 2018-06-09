@@ -147,4 +147,8 @@ public class MainPageObject {
                 5
         );
     }
+
+    protected void assertElementPresent (By by) {
+        Assert.assertTrue("Can't find article's title!", driver.findElements(by).size() >= 1);
+    }
 }

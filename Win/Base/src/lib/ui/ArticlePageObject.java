@@ -110,4 +110,8 @@ public class ArticlePageObject extends MainPageObject {
                 5
         );
     }
+
+    public void assertTitleIsPresentOnArticlesPage() {
+        this.assertElementPresent(By.id(TITLE));
+    }
 }
