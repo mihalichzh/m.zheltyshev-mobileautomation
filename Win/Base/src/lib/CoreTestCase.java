@@ -21,7 +21,7 @@ public class CoreTestCase extends TestCase {
     public void setUp() throws Exception {
         super.setUp();
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platformNamee", "Android");
+        capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName", "AndroidTestDevice");
         capabilities.setCapability("platformVersion", "6.0");
         capabilities.setCapability("automationName", "Appium");

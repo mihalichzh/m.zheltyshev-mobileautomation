@@ -33,4 +33,14 @@ public class SearchTests extends CoreTestCase {
         searchPageObject.clickCancelButton();
         searchPageObject.checkSearchResultsListIsNotPresent();
     }
+
+    @Test
+    public void testFindArticleByTitleAndSubstring_ex9() {
+        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine("Java");
+        searchPageObject.waitForElementByTitleAndDescription("Java", "Island of Indonesia");
+        searchPageObject.waitForElementByTitleAndDescription("Java (programming language)", "Object-oriented programming language");
+        searchPageObject.waitForElementByTitleAndDescription("JavaScript", "Programming language");
+    }
 }

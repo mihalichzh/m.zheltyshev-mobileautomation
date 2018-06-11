@@ -10,14 +10,20 @@ public class SearchPageObject extends MainPageObject {
         SEARCH_INPUT = "//*[contains(@text, 'Search…')]",
         SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn",
         SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id = 'org.wikipedia:id/page_list_item_container']//*[@text = '{SUBSTRING}']",
-        SEARCH_RESULTS_LIST = "org.wikipedia:id/search_results_list";
 
+        //Темплейт локатора, который находит результат поиска одновременно по заголовку и описанию
+        SEARCH_RESULT_BY_TITLE_AND_SUBSTRING_TPL = "//*[android.widget.TextView[@index=0 and @text='{TITLE}'] and android.widget.TextView[@index=1 and @text='{SUBSTRING}']]";
     public SearchPageObject(AppiumDriver driver) {
         super(driver);
     }
 
     private static  String getResultSearchElement (String substring) {
         return  SEARCH_RESULT_BY_SUBSTRING_TPL.replace ("{SUBSTRING}", substring);
+    }
+
+    //Метод для подстановки в темплейт
+    private static String getResultSearchElementByTitleAndSubstring (String title, String substring) {
+        return SEARCH_RESULT_BY_TITLE_AND_SUBSTRING_TPL.replace("{TITLE}", title).replace("{SUBSTRING}", substring);
     }
 
     public void initSearchInput() {
@@ -34,7 +40,15 @@ public class SearchPageObject extends MainPageObject {
     }
 
     public void clickByArticleWithSubstring (String substring) {
-        this.waitForElementAndClick(By.xpath(getResultSearchElement(substring)), "Can't find and click search result!", 10);
+        this.waitForElementAndClick(By.xpath(getResultSearchElement(substring)),
+                "Can't find and click search result by substring!", 10);
+    }
+
+    //Метод клика по элементу с локатором с указанным title и substring
+    public void waitForElementByTitleAndDescription(String title, String substring) {
+        this.waitForElementPresent(By.xpath(getResultSearchElementByTitleAndSubstring(title,substring)),
+                "Can't find search result with title \"" + title + "\" and substring \"" + substring + "\"!",
+                10);
     }
 
     public void waitForCancelButtonToAppear () {
