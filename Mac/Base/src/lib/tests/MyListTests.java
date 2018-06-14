@@ -36,6 +36,7 @@ public class MyListTests extends CoreTestCase {
 
         articlePageObject.closeArticle();
         navigationUI.openMyList();
+        Thread.sleep(5000);
         navigationUI.checkFolderIsCreated();
 
         if(Platform.getInstance().isAndroid()){
@@ -71,5 +72,54 @@ public class MyListTests extends CoreTestCase {
         myListPageObject.checkTitleinMyListEqualToTitleOnArticlePage("C++");
 
     }
+
+    @Test
+    public void testSaveTwoArticles_ex10 () throws InterruptedException {
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
+        ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
+        NavigationUI navigationUI = NavigationUIFactory.get(driver);
+        MyListPageObject myListPageObject = MyListsPageObjectFactory.get(driver);
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine("Java");
+        searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
+        articlePageObject.waitForTitleElementByString("id:Java (programming language)");
+        String first_article_title = articlePageObject.getArticleTitle();
+
+        if(Platform.getInstance().isAndroid()) {
+            articlePageObject.addArticleToMyList(name_of_folder);}
+        else {
+            articlePageObject.addArticleToMySaved();
+        }
+
+        articlePageObject.closeArticle();
+
+        searchPageObject.initSearchInput();
+        if(Platform.getInstance().isIOS()) {
+            searchPageObject.clickCLearSearchInputButton();
+        }
+
+        searchPageObject.typeSearchLine("iOS");
+        searchPageObject.clickByArticleWithSubstring("Mobile operating system by Apple");
+        Thread.sleep(10000);
+        //articlePageObject.waitForTitleElementByString("C++");
+        //String second_article_title = articlePageObject.getArticleTitleByString("id:iOS");
+
+        if(Platform.getInstance().isAndroid()) {
+            articlePageObject.addArticleToMyList(name_of_folder);}
+        else {
+            articlePageObject.addArticleToMySaved();
+        }
+
+        articlePageObject.closeArticle();
+        navigationUI.openMyList();
+        Thread.sleep(5000);
+        navigationUI.checkFolderIsCreated();
+
+        if(Platform.getInstance().isAndroid()){
+            myListPageObject.openFolderByName(name_of_folder);}
+
+        myListPageObject.swipeByArticleToDelete("Java (programming language)");
+    }
+
 
 }

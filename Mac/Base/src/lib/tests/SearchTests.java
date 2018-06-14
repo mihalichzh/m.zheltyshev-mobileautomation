@@ -8,7 +8,7 @@ import org.junit.Test;
 public class SearchTests extends CoreTestCase {
 
     @Test
-    public void testamountOfNotEmptySearch() {
+    public void testamountOfNotEmptySearch() throws InterruptedException {
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Linkin Park Diskography");
@@ -16,7 +16,7 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
-    public void testCancelSearch() {
+    public void testCancelSearch() throws InterruptedException{
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Java");
@@ -26,7 +26,7 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
-    public void testCancelSearch_ex3_refactored() {
+    public void testCancelSearch_ex3_refactored() throws InterruptedException {
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Test");
@@ -36,7 +36,7 @@ public class SearchTests extends CoreTestCase {
     }
 
     @Test
-    public void testFindArticleByTitleAndSubstring_ex9() {
+    public void testFindArticleByTitleAndSubstring_ex9() throws InterruptedException{
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Java");

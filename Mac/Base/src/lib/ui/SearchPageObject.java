@@ -2,6 +2,7 @@ package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 abstract public class SearchPageObject extends MainPageObject {
 
@@ -12,6 +13,8 @@ abstract public class SearchPageObject extends MainPageObject {
         SEARCH_RESULT_BY_SUBSTRING_TPL,
         SEARCH_RESULT_ELEMENT,
         SEARCH_EMPTY_RESULT_ELEMENT,
+        SEARCH_INPUT_WITH_TEXT,
+        CLEAR_SEARCH_INPUT_BTN,
 
         //Темплейт локатора, который находит результат поиска одновременно по заголовку и описанию
         SEARCH_RESULT_BY_TITLE_AND_SUBSTRING_TPL;
@@ -29,8 +32,13 @@ abstract public class SearchPageObject extends MainPageObject {
     }
 
     public void initSearchInput() {
-        this.waitForElementAndClick(SEARCH_INIT_ELEMENT,"Can't find and click init search input!", 5);
-        this.waitForElementPresent(SEARCH_INPUT, "Can't find init search element after click!", 5);
+        try {
+            WebElement search_input = this.waitForElementAndClick(SEARCH_INIT_ELEMENT, "Can't find and click init search input!", 5);
+            search_input.clear();
+            Thread.sleep(2000);
+            } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void typeSearchLine(String search_line) {
@@ -81,5 +89,21 @@ abstract public class SearchPageObject extends MainPageObject {
     public void checkSearchResultsListIsNotPresent () {
 
         this.checkForSearchResultAreEmpty();
+    }
+
+    public void clearSearchInput() {
+        this.waitForElementAndClear(
+                SEARCH_INPUT_WITH_TEXT,
+                "Can't clear search button!",
+                5
+        );
+    }
+
+    public void clickCLearSearchInputButton() {
+        this.waitForElementAndClick(
+                CLEAR_SEARCH_INPUT_BTN,
+                "Can't click on clear search field button!",
+                10
+        );
     }
 }

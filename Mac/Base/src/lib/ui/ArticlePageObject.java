@@ -29,12 +29,25 @@ public abstract class ArticlePageObject extends MainPageObject {
         return this.waitForElementPresent(TITLE,"Can't find page title!", 15);
     }
 
+    public WebElement waitForTitleElementByString (String title) {
+        return this.waitForElementPresent(title,"Can't find page title!", 15);
+    }
+
     public String getArticleTitle () {
 
         if (Platform.getInstance().isAndroid()){
         return waitForTitleElement().getAttribute("text");}
         else {
             return waitForTitleElement().getAttribute("name");
+        }
+    }
+
+    public String getArticleTitleByString (String title) {
+
+        if (Platform.getInstance().isAndroid()){
+            return waitForTitleElement().getAttribute("text");}
+        else {
+            return waitForTitleElementByString(title).getAttribute("name");
         }
     }
 

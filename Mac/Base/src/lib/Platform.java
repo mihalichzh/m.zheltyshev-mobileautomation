@@ -66,7 +66,7 @@ public class Platform {
         capabilities.setCapability("deviceName", "iPhone SE");
         capabilities.setCapability("platformVersion", "11.4");
         capabilities.setCapability("app",
-                "/Users/admin/Documents/GitHub/m.zheltyshev-mobileautomation/Mac/Base/apks/Wikipedia.app");
+                "/Users/mike/Documents/GitHub/m.zheltyshev-mobileautomation/Mac/Base/apks/Wikipedia.app");
         return capabilities;
     }
 
