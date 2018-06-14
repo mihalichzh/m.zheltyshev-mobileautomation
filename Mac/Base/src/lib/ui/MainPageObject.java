@@ -144,8 +144,8 @@ public class MainPageObject {
         return element_location_by_y < screen_size_by_y;
     }
 
-    public void clickElementToTheRightUpperCorner(String locator + "/..", String error_message) {
-        WebElement element = this.waitForElementPresent(locator,error_message);
+    public void clickElementToTheRightUpperCorner(String locator, String error_message) {
+        WebElement element = this.waitForElementPresent(locator + "/..",error_message,5);
         int right_x = element.getLocation().getX();
         int upper_y = element.getLocation().getY();
         int lower_y = upper_y + element.getSize().getHeight();
