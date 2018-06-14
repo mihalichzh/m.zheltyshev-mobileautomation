@@ -1,26 +1,38 @@
 package lib.tests;
 
 import lib.CoreTestCase;
+import lib.Platform;
 import lib.ui.ArticlePageObject;
 import lib.ui.MyListPageObject;
 import lib.ui.NavigationUI;
 import lib.ui.SearchPageObject;
+import lib.ui.factories.ArticlePageObjectFactory;
+import lib.ui.factories.NavigationUIFactory;
+import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
 public class MyListTests extends CoreTestCase {
 
+    private static String name_of_folder = "Learning programming";
+
     @Test
     public void testsaveFirstArticleToMyList () throws InterruptedException {
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
-        ArticlePageObject articlePageObject = new ArticlePageObject(driver);
-        NavigationUI navigationUI = new NavigationUI(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
+        ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
+        NavigationUI navigationUI = NavigationUIFactory.get(driver);
         MyListPageObject myListPageObject = new MyListPageObject(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Java");
         searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
         articlePageObject.waitForTitleElement();
-        String name_of_folder = "Learning programming";
-        articlePageObject.addArticleToMyList(name_of_folder);
+        String article_title = articlePageObject.getArticleTitle();
+
+        if(Platform.getInstance().isAndroid()) {
+        articlePageObject.addArticleToMyList(name_of_folder);}
+        else {
+            articlePageObject.addArticleToMySaved();
+        }
+
         articlePageObject.closeArticle();
         navigationUI.openMyList();
         navigationUI.checkFolderIsCreated();
@@ -31,9 +43,9 @@ public class MyListTests extends CoreTestCase {
 
     @Test
     public void testSaveTwoArticles_ex5_refactored() throws InterruptedException {
-        SearchPageObject searchPageObject = new SearchPageObject(driver);
-        ArticlePageObject articlePageObject = new ArticlePageObject(driver);
-        NavigationUI navigationUI = new NavigationUI(driver);
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
+        ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
+        NavigationUI navigationUI = NavigationUIFactory.get(driver);
         MyListPageObject myListPageObject = new MyListPageObject(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Java");

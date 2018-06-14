@@ -3,11 +3,14 @@ package lib.ui;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
-public class NavigationUI extends MainPageObject {
+abstract public class NavigationUI extends MainPageObject {
 
-    private static final String
-    TO_MY_LIST_BUTTON = "//android.widget.FrameLayout[@content-desc='My lists']",
-    ARTICLE_ITEM = "org.wikipedia:id/item_container";
+    protected static String
+    /*TO_MY_LIST_BUTTON = "xpath://android.widget.FrameLayout[@content-desc='My lists']",
+    ARTICLE_ITEM = "id:org.wikipedia:id/item_container";*/
+
+    TO_MY_LIST_BUTTON,
+    ARTICLE_ITEM;
 
     public NavigationUI (AppiumDriver driver) {
         super(driver);
@@ -15,7 +18,7 @@ public class NavigationUI extends MainPageObject {
 
     public void openMyList () {
         this.waitForElementAndClick(
-                By.xpath(TO_MY_LIST_BUTTON),
+                 TO_MY_LIST_BUTTON,
                 "Can't find 'To my lists' button!",
                 5
         );
@@ -23,7 +26,7 @@ public class NavigationUI extends MainPageObject {
 
     public void checkFolderIsCreated () {
         this.waitForElementAndClick(
-                By.id(ARTICLE_ITEM),
+                 ARTICLE_ITEM,
                 "Can't find created folder!",
                 5
         );
