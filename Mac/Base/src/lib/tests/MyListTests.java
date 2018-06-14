@@ -7,6 +7,7 @@ import lib.ui.MyListPageObject;
 import lib.ui.NavigationUI;
 import lib.ui.SearchPageObject;
 import lib.ui.factories.ArticlePageObjectFactory;
+import lib.ui.factories.MyListsPageObjectFactory;
 import lib.ui.factories.NavigationUIFactory;
 import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
@@ -20,7 +21,7 @@ public class MyListTests extends CoreTestCase {
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
         ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
         NavigationUI navigationUI = NavigationUIFactory.get(driver);
-        MyListPageObject myListPageObject = new MyListPageObject(driver);
+        MyListPageObject myListPageObject = MyListsPageObjectFactory.get(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Java");
         searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
@@ -36,7 +37,10 @@ public class MyListTests extends CoreTestCase {
         articlePageObject.closeArticle();
         navigationUI.openMyList();
         navigationUI.checkFolderIsCreated();
-        myListPageObject.openFolderByName(name_of_folder);
+
+        if(Platform.getInstance().isAndroid()){
+        myListPageObject.openFolderByName(name_of_folder);}
+
         myListPageObject.swipeByArticleToDelete("Java (programming language)");
     }
 
@@ -46,7 +50,7 @@ public class MyListTests extends CoreTestCase {
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
         ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
         NavigationUI navigationUI = NavigationUIFactory.get(driver);
-        MyListPageObject myListPageObject = new MyListPageObject(driver);
+        MyListPageObject myListPageObject = MyListsPageObjectFactory.get(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Java");
         searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
