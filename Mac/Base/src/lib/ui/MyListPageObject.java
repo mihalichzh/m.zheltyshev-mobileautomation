@@ -71,11 +71,20 @@ abstract public class MyListPageObject extends MainPageObject {
                 5
         ).getAttribute("text");
 
-        waitForElementAndClick(
+/*        waitForElementAndClick(
                 "xpath://*[@text='" + name + "']",
                 "Can't click on second's article entry in saved articles list!",
                 5
+        );*/
+
+        waitForElementAndClick(
+                "xpath://*android.widget.TextView[@text='" + name + "']",
+                "Can't click on second's article entry in saved articles list!",
+                5
         );
+
+
+        //*android.widget.TextView[@text='" + name + "'];
 
         String title_on_articles_page = waitForElementPresent(
                 "id:org.wikipedia:id/view_page_title_text",

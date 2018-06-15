@@ -72,7 +72,7 @@ public abstract class ArticlePageObject extends MainPageObject {
         this.waitForElementAndClick(
                 OPTIONS_BUTTON,
                 "Can't find 'More options' button!",
-                5
+                10
         );
 
         Thread.sleep(1000);
@@ -80,32 +80,32 @@ public abstract class ArticlePageObject extends MainPageObject {
         this.waitForElementAndClick(
                 OPTIONS_ADD_TO_MY_LIST_BUTTON,
                 "Can't find 'Add to reading list' option!",
-                5
+                10
         );
 
         this.waitForElementAndClick(
                  GOT_IT_BUTTON,
                 "Can't find 'GOT IT' overlay button!",
-                5
+                10
         );
 
         this.waitForElementAndClear(
                 LIST_NAME_INPUT_FIELD,
                 "Can't find input of 'Name of the list' field",
-                5
+                10
         );
 
         this.waitForElementAndSendKeys(
                 LIST_NAME_INPUT_FIELD,
                 name_of_folder,
                 "Can't put text to 'Name of the list' field",
-                5
+                10
         );
 
         this.waitForElementAndClick(
                 SAVE_TO_MY_LIST_OK_BUTTON,
                 "Can't press OK button!",
-                5
+                10
         );
     }
 
@@ -113,7 +113,7 @@ public abstract class ArticlePageObject extends MainPageObject {
         this.waitForElementAndClick(
                 OPTIONS_BUTTON,
                 "Can't find 'More options' button!",
-                5
+                10
         );
 
         Thread.sleep(1000);
@@ -121,20 +121,20 @@ public abstract class ArticlePageObject extends MainPageObject {
         this.waitForElementAndClick(
                 OPTIONS_ADD_TO_MY_LIST_BUTTON,
                 "Can't find 'Add to reading list' option!",
-                5
+                10
         );
 
         waitForElementAndClick(
                 getListXpathByName(name_of_folder),
                 "Can't click on saved articles list for the second article!",
-                5
+                10
         );}
 
         public void closeArticle () {
         this.waitForElementAndClick(
                 CLOSE_ARTICLE_BUTTON,
                 "Can't find X button!",
-                5
+                10
         );
     }
 
@@ -146,7 +146,7 @@ public abstract class ArticlePageObject extends MainPageObject {
         this.waitForElementAndClick(
                 OPTIONS_ADD_TO_MY_LIST_BUTTON,
                 "Can't find option to add article to reading list!",
-                5
+                10
         );
     }
 }

@@ -33,8 +33,7 @@ abstract public class SearchPageObject extends MainPageObject {
 
     public void initSearchInput() {
         try {
-            WebElement search_input = this.waitForElementAndClick(SEARCH_INIT_ELEMENT, "Can't find and click init search input!", 5);
-            search_input.clear();
+            this.waitForElementAndClick(SEARCH_INIT_ELEMENT, "Can't find and click init search input!", 5);
             Thread.sleep(2000);
             } catch (InterruptedException e) {
             e.printStackTrace();

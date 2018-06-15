@@ -15,8 +15,9 @@ public class CoreTestCase extends TestCase {
     public void setUp() throws Exception {
         super.setUp();
         driver = Platform.getInstance().getDriver();
-        waitd = new WebDriverWait(driver, 20);
-        this.skipwelcomePageForIOSApp();
+        waitd = new WebDriverWait(driver, 30);
+        if(Platform.getInstance().isIOS()){
+        this.skipwelcomePageForIOSApp();}
     }
 
     @Override

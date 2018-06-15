@@ -82,7 +82,7 @@ public class MyListTests extends CoreTestCase {
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Java");
         searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
-        articlePageObject.waitForTitleElementByString("id:Java (programming language)");
+        //articlePageObject.waitForTitleElementByString("id:Java (programming language)");
         String first_article_title = articlePageObject.getArticleTitle();
 
         if(Platform.getInstance().isAndroid()) {
@@ -98,14 +98,14 @@ public class MyListTests extends CoreTestCase {
             searchPageObject.clickCLearSearchInputButton();
         }
 
-        searchPageObject.typeSearchLine("iOS");
-        searchPageObject.clickByArticleWithSubstring("Mobile operating system by Apple");
-        Thread.sleep(10000);
+        searchPageObject.typeSearchLine("Test");
+        searchPageObject.clickByArticleWithSubstring("Wikimedia disambiguation page");
+        articlePageObject.waitForTitleElement();
         //articlePageObject.waitForTitleElementByString("C++");
         //String second_article_title = articlePageObject.getArticleTitleByString("id:iOS");
 
         if(Platform.getInstance().isAndroid()) {
-            articlePageObject.addArticleToMyList(name_of_folder);}
+            articlePageObject.addArticleToMyExistingList("Learning programming");}
         else {
             articlePageObject.addArticleToMySaved();
         }
@@ -113,12 +113,13 @@ public class MyListTests extends CoreTestCase {
         articlePageObject.closeArticle();
         navigationUI.openMyList();
         Thread.sleep(5000);
-        navigationUI.checkFolderIsCreated();
+        //navigationUI.checkFolderIsCreated();
 
         if(Platform.getInstance().isAndroid()){
-            myListPageObject.openFolderByName(name_of_folder);}
+            myListPageObject.openFolderByName("Learning programming");}
 
         myListPageObject.swipeByArticleToDelete("Java (programming language)");
+        myListPageObject.checkTitleinMyListEqualToTitleOnArticlePage("Test");
     }
 
 
