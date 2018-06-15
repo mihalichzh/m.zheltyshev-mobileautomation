@@ -15,8 +15,8 @@
       <file leaf-file-name="SearchTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lib/tests/SearchTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+            <state relative-caret-position="691">
+              <caret line="55" column="79" lean-forward="true" selection-start-line="55" selection-start-column="79" selection-end-line="55" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -316,12 +316,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 15m 43s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 16m 33s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 25m 56s.xml">
       <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
     </history-entry>
@@ -346,6 +340,12 @@
     <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 42m 23s.xml">
       <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 57m 26s.xml">
+      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 58m 07s.xml">
+      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="6" />
@@ -359,7 +359,7 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015625" side_tool="true" weight="0.39027148" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4984375" visible="true" weight="0.3831672" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4984375" weight="0.3831672" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
@@ -627,8 +627,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/tests/SearchTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+        <state relative-caret-position="691">
+          <caret line="55" column="79" lean-forward="true" selection-start-line="55" selection-start-column="79" selection-end-line="55" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
