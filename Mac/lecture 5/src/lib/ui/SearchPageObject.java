@@ -56,26 +56,6 @@ abstract public class SearchPageObject extends MainPageObject {
                 "Can't find and click search result by substring!", 10);
     }
 
-/*    //Метод клика по элементу с локатором с указанным title и substring
-    public void waitForElementByTitleAndDescription(String title, String substring) {
-        if(Platform.getInstance().isAndroid()){
-        this.waitForElementPresent(getResultSearchElementByTitleAndSubstringAndroid(title,substring),
-                "Can't find search result with title \"" + title + "\" and substring \"" + substring + "\"!",
-                10);}
-                else {
-            String normalized_name = title + " " + substring;
-            String[] title_and_substring_to_find = {title,substring};
-            String[] title_and_substring_actual = this.splitIOSArticleNameIntoTitleAndSubstring(
-                    this.waitForElementPresent(
-                            "xpath://*[normalize-space(@name)='"+ normalized_name +"']",
-                            "Can't find article with '" + normalized_name + "' string in name!",
-                            10).getAttribute("name"));
-            //String[] title_and_substring_actual = this.splitIOSArticleNameIntoTitleAndSubstring(driver.findElement(By.xpath("//*[normalize-space(@name)='"+ normalized_name +"']")).getAttribute("name"));
-            Assert.assertArrayEquals("Can't find search result with exact title \"" + title + "\" and substring \"" + substring + "\"!",
-                    title_and_substring_to_find,title_and_substring_actual);
-        }
-    }*/
-
     //Для iOS сделал просто нормализацию символа '\n', т.к. и тайтл и подзаголовок статьи лежат в одном атрибуте @name, но разделены новой строкой.
     public void waitForElementByTitleAndDescription(String title, String substring) {
         if(Platform.getInstance().isAndroid()){
