@@ -173,7 +173,7 @@ public class MainPageObject {
 
         TouchAction action = new TouchAction(driver);
         action.press(rightX, middleY);
-        action.waitAction(250);
+        action.waitAction(300);
 
         if (Platform.getInstance().isAndroid()){
             action.moveTo(leftX,middleY);

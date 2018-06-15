@@ -1,8 +1,11 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import lib.Platform;
+import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+
+import java.util.regex.Pattern;
 
 abstract public class SearchPageObject extends MainPageObject {
 
@@ -27,7 +30,7 @@ abstract public class SearchPageObject extends MainPageObject {
     }
 
     //Метод для подстановки в темплейт
-    private static String getResultSearchElementByTitleAndSubstring (String title, String substring) {
+    private static String getResultSearchElementByTitleAndSubstringAndroid(String title, String substring) {
         return SEARCH_RESULT_BY_TITLE_AND_SUBSTRING_TPL.replace("{TITLE}", title).replace("{SUBSTRING}", substring);
     }
 
@@ -53,11 +56,39 @@ abstract public class SearchPageObject extends MainPageObject {
                 "Can't find and click search result by substring!", 10);
     }
 
-    //Метод клика по элементу с локатором с указанным title и substring
+/*    //Метод клика по элементу с локатором с указанным title и substring
     public void waitForElementByTitleAndDescription(String title, String substring) {
-        this.waitForElementPresent(getResultSearchElementByTitleAndSubstring(title,substring),
+        if(Platform.getInstance().isAndroid()){
+        this.waitForElementPresent(getResultSearchElementByTitleAndSubstringAndroid(title,substring),
                 "Can't find search result with title \"" + title + "\" and substring \"" + substring + "\"!",
-                10);
+                10);}
+                else {
+            String normalized_name = title + " " + substring;
+            String[] title_and_substring_to_find = {title,substring};
+            String[] title_and_substring_actual = this.splitIOSArticleNameIntoTitleAndSubstring(
+                    this.waitForElementPresent(
+                            "xpath://*[normalize-space(@name)='"+ normalized_name +"']",
+                            "Can't find article with '" + normalized_name + "' string in name!",
+                            10).getAttribute("name"));
+            //String[] title_and_substring_actual = this.splitIOSArticleNameIntoTitleAndSubstring(driver.findElement(By.xpath("//*[normalize-space(@name)='"+ normalized_name +"']")).getAttribute("name"));
+            Assert.assertArrayEquals("Can't find search result with exact title \"" + title + "\" and substring \"" + substring + "\"!",
+                    title_and_substring_to_find,title_and_substring_actual);
+        }
+    }*/
+
+    //Для iOS сделал просто нормализацию символа '\n', т.к. и тайтл и подзаголовок статьи лежат в одном атрибуте @name, но разделены новой строкой.
+    public void waitForElementByTitleAndDescription(String title, String substring) {
+        if(Platform.getInstance().isAndroid()){
+            this.waitForElementPresent(getResultSearchElementByTitleAndSubstringAndroid(title,substring),
+                    "Can't find search result with title \"" + title + "\" and substring \"" + substring + "\"!",
+                    10);}
+        else {
+            String name_to_normalize = title + " " + substring;
+            this.waitForElementPresent(
+                    "xpath://*[normalize-space(@name)='"+ name_to_normalize +"']",
+                    "Can't find article with title \"" + title + "\" and substring \"" + substring + "\"!",
+                    10);
+        }
     }
 
     public void waitForCancelButtonToAppear () {
@@ -104,5 +135,10 @@ abstract public class SearchPageObject extends MainPageObject {
                 "Can't click on clear search field button!",
                 10
         );
+    }
+
+    public String[] splitIOSArticleNameIntoTitleAndSubstring (String article_name) {
+        String[] explored_name = article_name.split(Pattern.quote("\n"),2);
+        return explored_name;
     }
 }

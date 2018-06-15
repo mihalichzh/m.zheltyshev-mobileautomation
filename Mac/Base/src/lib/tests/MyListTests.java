@@ -100,7 +100,8 @@ public class MyListTests extends CoreTestCase {
 
         searchPageObject.typeSearchLine("Test");
         searchPageObject.clickByArticleWithSubstring("Wikimedia disambiguation page");
-        articlePageObject.waitForTitleElement();
+        Thread.sleep(10000);
+        //articlePageObject.waitForTitleElement();
         //articlePageObject.waitForTitleElementByString("C++");
         //String second_article_title = articlePageObject.getArticleTitleByString("id:iOS");
 
