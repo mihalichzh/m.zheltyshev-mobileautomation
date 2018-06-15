@@ -50,7 +50,6 @@ public class SearchTests extends CoreTestCase {
     @Test
     public void testFindArticleByTitleAndSubstring_iOS_ex11() throws InterruptedException{
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
-        MainPageObject mainPageObject = new MainPageObject(driver);
         searchPageObject.initSearchInput();
         searchPageObject.typeSearchLine("Java");
         searchPageObject.waitForElementByTitleAndDescription("Java", "Island of Indonesia");

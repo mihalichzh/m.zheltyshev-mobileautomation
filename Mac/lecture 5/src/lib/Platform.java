@@ -53,7 +53,7 @@ public class Platform {
         capabilities.setCapability("appPackage", "org.wikipedia");
         capabilities.setCapability("appActivity", ".main.MainActivity");
         capabilities.setCapability("app",
-                "/Users/admin/Documents/GitHub/m.zheltyshev-mobileautomation/Mac/Base/apks/org.wikipedia.apk");
+                "C:\\Users\\mihal\\Documents\\GitHub\\m.zheltyshev-mobileautomation\\Mac\\lecture 5\\apks\\org.wikipedia.apk");
         //Capability для установки ориентации экрана по умолчанию:
         //capabilities.setCapability("orientation", "LANDSCAPE");
         //capabilities.setCapability("orientation", "LANDSCAPE");
