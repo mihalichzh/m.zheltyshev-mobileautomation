@@ -24,6 +24,7 @@ public class MainPageObject {
     }
 
     public WebElement waitForElementPresent(String locator, String error_msg, long timeoutInSeconds) {
+        System.out.println("Current locator is " + locator);
         By by = getLocatorByString(locator);
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_msg + "\n");

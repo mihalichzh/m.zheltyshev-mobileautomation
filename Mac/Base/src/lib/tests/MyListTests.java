@@ -120,7 +120,7 @@ public class MyListTests extends CoreTestCase {
 
         //Ветка добавления открытой статьи в избранное для разных платформ
         if (Platform.getInstance().isAndroid()) {
-            articlePageObject.addArticleToMyList(name_of_folder);
+            articlePageObject.addArticleToMyExistingList(name_of_folder);
         } else {
             articlePageObject.addArticleToMySaved();
         }

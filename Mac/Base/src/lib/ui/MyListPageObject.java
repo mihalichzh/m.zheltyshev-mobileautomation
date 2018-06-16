@@ -4,7 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import lib.Platform;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import sun.jvm.hotspot.utilities.Assert;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,8 @@ abstract public class MyListPageObject extends MainPageObject {
 
     protected static String
             FOLDER_BY_NAME_TPL,
-            ARTICLE_BY_TITLE_TPL;
+            ARTICLE_BY_TITLE_TPL,
+            ARTICLE_ITEM_CONTAINER;
 
     private static String getFolderXpathByName(String name_of_folder) {
         return FOLDER_BY_NAME_TPL.replace("{FOLDER NAME}", name_of_folder);
@@ -35,7 +36,7 @@ abstract public class MyListPageObject extends MainPageObject {
         this.waitForElementAndClick(
                 folder_name_xpath,
                 "Can't find and open folder " + name_of_folder,
-                5
+                10
         );
     }
 
@@ -59,21 +60,38 @@ abstract public class MyListPageObject extends MainPageObject {
     public void checkArticleIsStillPresentInList(int hash_code_of_element) throws InterruptedException {
         List<Integer> hashcodes_of_articles_list = new ArrayList();
         Thread.sleep(10000);
-        if(Platform.getInstance().isIOS()) {
-           List<WebElement> articles_list =  driver.findElements(By.xpath("//XCUIElementTypeCell"));
-           for(WebElement element:articles_list) {
-               hashcodes_of_articles_list.add(element.hashCode());
-           }
-            assertTrue("Not expected: Second article is not in the list!",hashcodes_of_articles_list.contains(hash_code_of_element));
+        List<WebElement> articles_list = driver.findElements(By.xpath(ARTICLE_ITEM_CONTAINER));
+        for (WebElement element : articles_list) {
+            hashcodes_of_articles_list.add(element.hashCode());
+            }
+            if(Platform.getInstance().isIOS()) {
+                assertTrue("Not expected: Second article is not in the list!", hashcodes_of_articles_list.contains(hash_code_of_element));
+            } else {
+                assertTrue("Not expected: Second article is not in the list!", hashcodes_of_articles_list.contains(hash_code_of_element+3));
+            }
+        }
+
+
+    public int getHashCodeOfArticleElement(String article_title) {
+        if(Platform.getInstance().isIOS()){
+        return this.waitForElementPresent(getTitleXpathByName(article_title)+"/..",
+                "Can't find target article with title" + article_title,
+                30
+        ).hashCode();}
+        else {
+            return this.waitForElementPresent(getTitleXpathByName(article_title)+"/../../..",
+                    "Can't find target article with title" + article_title,
+                    30
+            ).hashCode();
         }
     }
 
-    public int getHashCodeOfArticleElement(String article_title) {
-        return  this.waitForElementPresent(getTitleXpathByName(article_title)+"/..",
-                "Can't find target article with title" + article_title,
-                30
-        ).hashCode();
-    }
+    public void getHashCodeOfArticleElement_debug(String level) {
+            System.out.println(this.waitForElementPresent("xpath://*[@text='BASIC']" + level,
+                    "Can't find target article with title" + level,
+                    30
+            ).hashCode());
+        }
 
     public void waitForArticleToDissapearByTitle(String article_title) {
         this.waitForElementIsNotPresent(
