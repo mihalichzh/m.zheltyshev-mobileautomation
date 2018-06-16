@@ -26,11 +26,11 @@ public abstract class ArticlePageObject extends MainPageObject {
     }
 
     public WebElement waitForTitleElement () {
-        return this.waitForElementPresent(TITLE,"Can't find page title!", 15);
+        return this.waitForElementPresent(TITLE,"Can't find page title!", 25);
     }
 
     public WebElement waitForTitleElementByString (String title) {
-        return this.waitForElementPresent(title,"Can't find page title!", 15);
+        return this.waitForElementPresent(title,"Can't find page title!", 25);
     }
 
     public String getArticleTitle () {
@@ -72,10 +72,8 @@ public abstract class ArticlePageObject extends MainPageObject {
         this.waitForElementAndClick(
                 OPTIONS_BUTTON,
                 "Can't find 'More options' button!",
-                10
+                20
         );
-
-        Thread.sleep(1000);
 
         this.waitForElementAndClick(
                 OPTIONS_ADD_TO_MY_LIST_BUTTON,
@@ -146,7 +144,7 @@ public abstract class ArticlePageObject extends MainPageObject {
         this.waitForElementAndClick(
                 OPTIONS_ADD_TO_MY_LIST_BUTTON,
                 "Can't find option to add article to reading list!",
-                10
+                25
         );
     }
 }

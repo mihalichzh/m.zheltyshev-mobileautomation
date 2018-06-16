@@ -36,7 +36,7 @@ abstract public class SearchPageObject extends MainPageObject {
 
     public void initSearchInput() {
         try {
-            this.waitForElementAndClick(SEARCH_INIT_ELEMENT, "Can't find and click init search input!", 5);
+            this.waitForElementAndClick(SEARCH_INIT_ELEMENT, "Can't find and click init search input!", 30);
             Thread.sleep(2000);
             } catch (InterruptedException e) {
             e.printStackTrace();
@@ -44,16 +44,16 @@ abstract public class SearchPageObject extends MainPageObject {
     }
 
     public void typeSearchLine(String search_line) {
-        this.waitForElementAndSendKeys(SEARCH_INPUT, search_line,"Can't type text to search input!", 5);
+        this.waitForElementAndSendKeys(SEARCH_INPUT, search_line,"Can't type text to search input!", 30);
     }
 
     public void waitForSearchResult (String substring) {
-        this.waitForElementPresent(getResultSearchElement(substring), "Can't find search result!", 5);
+        this.waitForElementPresent(getResultSearchElement(substring), "Can't find search result!", 30);
     }
 
     public void clickByArticleWithSubstring (String substring) {
-        this.waitForElementAndClick(getResultSearchElement(substring),
-                "Can't find and click search result by substring!", 10);
+            this.waitForElementAndClick(getResultSearchElement(substring),
+                    "Can't find and click search result by substring!", 30);
     }
 
 /*    //Метод клика по элементу с локатором с указанным title и substring

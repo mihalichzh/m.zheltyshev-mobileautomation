@@ -10,13 +10,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Base$MyListTests_testsaveFirstArticleToMyList.ic" NAME="MyListTests.testsaveFirstArticleToMyList Coverage Results" MODIFIED="1529142527825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>lib.tests.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchTests.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lib/tests/SearchTests.java">
+      <file leaf-file-name="MyListPageObject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/ui/MyListPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="55" column="79" lean-forward="true" selection-start-line="55" selection-start-column="79" selection-end-line="55" selection-end-column="79" />
+            <state relative-caret-position="170">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -24,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainPageObject.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainPageObject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="217" column="5" selection-start-line="217" selection-start-column="5" selection-end-line="217" selection-end-column="5" />
+            <state relative-caret-position="170">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#543#544#0" expanded="true" />
@@ -38,15 +43,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="MyListTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/tests/MyListTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="142" selection-start-line="142" selection-end-line="142" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="SearchPageObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/ui/SearchPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="78" column="118" selection-start-line="78" selection-start-column="118" selection-end-line="78" selection-end-column="118" />
+            <state relative-caret-position="200">
+              <caret line="55" column="76" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4310#4311#0" expanded="true" />
-                <element signature="e#4369#4370#0" expanded="true" />
+                <element signature="e#5316#5317#0" expanded="true" />
+                <element signature="e#5375#5376#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,7 +86,6 @@
         <option value="$PROJECT_DIR$/src/lib/ui/android/AndroidSearchPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/WelcomePageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/android/AndroidArticlePageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/ios/IOSArticlePageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/factories/SearchPageObjectFactory.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/factories/ArticlePageObjectFactory.java" />
         <option value="$PROJECT_DIR$/src/lib/tests/ArticleTests.java" />
@@ -80,20 +93,21 @@
         <option value="$PROJECT_DIR$/src/lib/ui/factories/NavigationUIFactory.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/android/AndroidMyListsPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/factories/MyListsPageObjectFactory.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/ios/IOSMyListsPageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/Platform.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/ios/IOSNavigationUI.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/ios/IOSSearchPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/android/AndroidNavigationUI.java" />
         <option value="$PROJECT_DIR$/src/lib/CoreTestCase.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/MyListPageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/tests/MyListTests.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/Test1.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/tests/SearchTests.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/ios/IOSMyListsPageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/ios/IOSArticlePageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/SearchPageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/Platform.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/tests/MyListTests.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/MyListPageObject.java" />
       </list>
     </option>
   </component>
@@ -107,7 +121,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,10 +166,27 @@
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Base" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Base" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Base" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="ios" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -184,7 +214,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11">
+  <component name="RunManager" selected="JUnit.MyListTests.testSaveTwoArticles_ex10_debug">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -201,6 +231,58 @@
       <option name="PACKAGE_NAME" value="lib.tests" />
       <option name="MAIN_CLASS_NAME" value="lib.tests.MyListTests" />
       <option name="METHOD_NAME" value="testSaveTwoArticles_ex10" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs>
+        <env name="PLATFORM" value="ios" />
+      </envs>
+      <patterns />
+    </configuration>
+    <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lib.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="lib.tests" />
+      <option name="MAIN_CLASS_NAME" value="lib.tests.MyListTests" />
+      <option name="METHOD_NAME" value="testSaveTwoArticles_ex10_debug" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs>
+        <env name="PLATFORM" value="ios" />
+      </envs>
+      <patterns />
+    </configuration>
+    <configuration name="MyListTests.testsaveFirstArticleToMyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lib.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="lib.tests" />
+      <option name="MAIN_CLASS_NAME" value="lib.tests.MyListTests" />
+      <option name="METHOD_NAME" value="testsaveFirstArticleToMyList" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" value="" />
@@ -294,11 +376,15 @@
     <list>
       <item itemvalue="JUnit.MyListTests.testSaveTwoArticles_ex10" />
       <item itemvalue="JUnit.SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" />
+      <item itemvalue="JUnit.MyListTests.testsaveFirstArticleToMyList" />
+      <item itemvalue="JUnit.MyListTests.testSaveTwoArticles_ex10_debug" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" />
+        <item itemvalue="JUnit.MyListTests.testSaveTwoArticles_ex10_debug" />
         <item itemvalue="JUnit.MyListTests.testSaveTwoArticles_ex10" />
+        <item itemvalue="JUnit.MyListTests.testsaveFirstArticleToMyList" />
+        <item itemvalue="JUnit.SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" />
       </list>
     </recent_temporary>
   </component>
@@ -316,35 +402,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 25m 56s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.16 at 16h 55m 29s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 27m 16s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.16 at 16h 56m 47s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 27m 53s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.16 at 16h 58m 05s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 29m 04s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.16 at 17h 00m 52s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 29m 39s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.16 at 17h 04m 34s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 30m 38s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.16 at 17h 09m 07s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 41m 06s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.16 at 17h 13m 38s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 42m 23s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.16 at 17h 28m 13s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 57m 26s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.16 at 17h 32m 01s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SearchTests_testFindArticleByTitleAndSubstring_iOS_ex11 - 2018.06.15 at 22h 58m 07s.xml">
-      <configuration name="SearchTests.testFindArticleByTitleAndSubstring_iOS_ex11" configurationId="JUnit" />
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.16 at 17h 33m 58s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -359,8 +445,9 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015625" side_tool="true" weight="0.39027148" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4984375" weight="0.3831672" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4984375" visible="true" weight="0.3831672" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
@@ -369,7 +456,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39819005" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39756367" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -380,28 +467,28 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4984375" visible="true" weight="0.3831672" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19739583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39819005" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015625" side_tool="true" weight="0.39027148" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.496875" weight="0.29678848" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -418,11 +505,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="29" />
+      <option name="time" value="34" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/FirstTest.java" />
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java" />
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java" />
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java" />
@@ -456,7 +542,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/factories/NavigationUIFactory.java" />
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/android/AndroidMyListsPageObject.java" />
     <entry file="file://$PROJECT_DIR$/src/lib/ui/factories/MyListsPageObjectFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/lib/tests/iOS/GetStartedTests.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -465,31 +550,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/ios/IOSMyListsPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/ios/IOSNavigationUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/tests/ArticleTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/ios/IOSArticlePageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -531,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/android/AndroidArticlePageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/WelcomePageObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
@@ -558,10 +615,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/ios/IOSSearchPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" lean-forward="true" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/tests/SearchTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="55" column="79" selection-start-line="55" selection-start-column="79" selection-end-line="55" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/android/AndroidMyListsPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/android/AndroidArticlePageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/ios/IOSMyListsPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/SearchPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="55" column="76" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5316#5317#0" expanded="true" />
+            <element signature="e#5375#5376#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/ArticlePageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+        <state relative-caret-position="185">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#741#742#0" expanded="true" />
@@ -570,67 +677,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/ios/IOSSearchPageObject.java">
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/ios/IOSArticlePageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" lean-forward="true" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/tests/MyListTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="121" column="43" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MyListPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/Platform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="68" column="106" lean-forward="true" selection-start-line="64" selection-start-column="8" selection-end-line="68" selection-end-column="106" />
+        <state relative-caret-position="354">
+          <caret line="65" column="58" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/SearchPageObject.java">
+    <entry file="file://$PROJECT_DIR$/src/lib/tests/ArticleTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="78" column="118" selection-start-line="78" selection-start-column="118" selection-end-line="78" selection-end-column="118" />
+        <state>
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/selenium-server-standalone-3.4.0.jar!/org/openqa/selenium/support/ui/ExpectedConditions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="367" lean-forward="true" selection-start-line="367" selection-end-line="367" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/tests/MyListTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="142" selection-start-line="142" selection-end-line="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/MyListPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4310#4311#0" expanded="true" />
-            <element signature="e#4369#4370#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="217" column="5" selection-start-line="217" selection-start-column="5" selection-end-line="217" selection-end-column="5" />
+        <state relative-caret-position="170">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#543#544#0" expanded="true" />
             <element signature="e#579#580#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/tests/SearchTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="55" column="79" lean-forward="true" selection-start-line="55" selection-start-column="79" selection-end-line="55" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

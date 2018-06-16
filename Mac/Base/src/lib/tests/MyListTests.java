@@ -17,7 +17,7 @@ public class MyListTests extends CoreTestCase {
     private static String name_of_folder = "Learning programming";
 
     @Test
-    public void testsaveFirstArticleToMyList () throws InterruptedException {
+    public void testsaveFirstArticleToMyList() throws InterruptedException {
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
         ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
         NavigationUI navigationUI = NavigationUIFactory.get(driver);
@@ -28,19 +28,18 @@ public class MyListTests extends CoreTestCase {
         articlePageObject.waitForTitleElement();
         String article_title = articlePageObject.getArticleTitle();
 
-        if(Platform.getInstance().isAndroid()) {
-        articlePageObject.addArticleToMyList(name_of_folder);}
-        else {
+        if (Platform.getInstance().isAndroid()) {
+            articlePageObject.addArticleToMyList(name_of_folder);
+        } else {
             articlePageObject.addArticleToMySaved();
         }
 
         articlePageObject.closeArticle();
         navigationUI.openMyList();
-        Thread.sleep(5000);
-        navigationUI.checkFolderIsCreated();
 
-        if(Platform.getInstance().isAndroid()){
-        myListPageObject.openFolderByName(name_of_folder);}
+        if (Platform.getInstance().isAndroid()) {
+            myListPageObject.openFolderByName(name_of_folder);
+        }
 
         myListPageObject.swipeByArticleToDelete("Java (programming language)");
     }
@@ -74,54 +73,77 @@ public class MyListTests extends CoreTestCase {
     }
 
     @Test
-    public void testSaveTwoArticles_ex10 () throws InterruptedException {
+    public void testSaveTwoArticles_ex10_debug() throws InterruptedException {
         SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
         ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
         NavigationUI navigationUI = NavigationUIFactory.get(driver);
         MyListPageObject myListPageObject = MyListsPageObjectFactory.get(driver);
-        searchPageObject.initSearchInput();
-        searchPageObject.typeSearchLine("Java");
-        searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
-        //articlePageObject.waitForTitleElementByString("id:Java (programming language)");
-        String first_article_title = articlePageObject.getArticleTitle();
 
-        if(Platform.getInstance().isAndroid()) {
-            articlePageObject.addArticleToMyList(name_of_folder);}
-        else {
+        //Делаем тап по поисковой строке
+        searchPageObject.initSearchInput();
+
+        //Вбиваем запрос
+        searchPageObject.typeSearchLine("Java");
+
+        //Тапаем по результату поиска с соответствующим подзаголовком
+        searchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
+
+        //Ждем загрузки статьи по появлению тайтла
+        articlePageObject.waitForTitleElement();
+
+        //Ветка добавления открытой статьи в избранное для разных платформ
+        if (Platform.getInstance().isAndroid()) {
+            articlePageObject.addArticleToMyList(name_of_folder);
+        } else {
             articlePageObject.addArticleToMySaved();
         }
 
+        //После добавления закрываем статью
         articlePageObject.closeArticle();
 
+        //Тапаем по поисковое строке
         searchPageObject.initSearchInput();
-        if(Platform.getInstance().isIOS()) {
+
+        //Для iOS перед вводом нового запроса тапаем по кнопке очистки поля от предыдущего запроса
+        if (Platform.getInstance().isIOS()) {
             searchPageObject.clickCLearSearchInputButton();
         }
 
-        searchPageObject.typeSearchLine("Test");
-        searchPageObject.clickByArticleWithSubstring("Wikimedia disambiguation page");
-        Thread.sleep(10000);
-        //articlePageObject.waitForTitleElement();
-        //articlePageObject.waitForTitleElementByString("C++");
-        //String second_article_title = articlePageObject.getArticleTitleByString("id:iOS");
+        //Вбиваем запрос
+        searchPageObject.typeSearchLine("BASIC");
 
-        if(Platform.getInstance().isAndroid()) {
-            articlePageObject.addArticleToMyExistingList("Learning programming");}
-        else {
+        //Тапаем по результату поиска с соответствующим подзаголовком
+        searchPageObject.clickByArticleWithSubstring("Programming language");
+
+        //
+        articlePageObject.waitForTitleElement();
+
+        //Ветка добавления открытой статьи в избранное для разных платформ
+        if (Platform.getInstance().isAndroid()) {
+            articlePageObject.addArticleToMyList(name_of_folder);
+        } else {
             articlePageObject.addArticleToMySaved();
         }
 
+        //После добавления закрываем статью
         articlePageObject.closeArticle();
+
+        //Открываем список избранных статей
         navigationUI.openMyList();
-        Thread.sleep(5000);
-        //navigationUI.checkFolderIsCreated();
 
-        if(Platform.getInstance().isAndroid()){
-            myListPageObject.openFolderByName("Learning programming");}
+        //Для Android предварительно заходим в папку с соответствующим названием
+        if (Platform.getInstance().isAndroid()) {
+            myListPageObject.openFolderByName(name_of_folder);
+        }
 
+        //Запоминаем hashCode элемента для той статьи, которую не будем удалять (чтобы потом проверить, осталась ли она)
+        int article_to_stay_hashcode = myListPageObject.getHashCodeOfArticleElement("BASIC");
+
+        //Удаляем статью с соответствующим заголовком ( - НЕ РАБОТАЕТ)
         myListPageObject.swipeByArticleToDelete("Java (programming language)");
-        myListPageObject.checkTitleinMyListEqualToTitleOnArticlePage("Test");
+
+        //В данном методе я сначала получаю все оставшиеся после удаления элементы-контейнеры для статей, заполняю ArrayList их хешкодами и ищу среди этого списка хешкод статьи, которая должна была остаться
+        myListPageObject.checkArticleIsStillPresentInList(article_to_stay_hashcode);
     }
-
-
 }
+

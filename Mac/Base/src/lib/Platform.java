@@ -63,7 +63,7 @@ public class Platform {
     private DesiredCapabilities getiOSDesiredCapabilities() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "iOS");
-        capabilities.setCapability("deviceName", "iPhone SE");
+        capabilities.setCapability("deviceName", "iPhone 6");
         capabilities.setCapability("platformVersion", "11.4");
         capabilities.setCapability("app",
                 "/Users/mike/Documents/GitHub/m.zheltyshev-mobileautomation/Mac/Base/apks/Wikipedia.app");

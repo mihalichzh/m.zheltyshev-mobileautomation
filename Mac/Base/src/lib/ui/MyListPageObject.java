@@ -2,7 +2,14 @@ package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
 import lib.Platform;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import sun.jvm.hotspot.utilities.Assert;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
 
 abstract public class MyListPageObject extends MainPageObject {
@@ -32,35 +39,55 @@ abstract public class MyListPageObject extends MainPageObject {
         );
     }
 
-    public void swipeByArticleToDelete(String article_title) {
+    public void swipeByArticleToDelete(String article_title) throws InterruptedException {
         this.waitForArticleToApearByTitle(article_title);
         this.swipeElementToLeft(
                 getTitleXpathByName(article_title),
-                "Can't find saved article!"
+                "Can't find saved article with title " +article_title
         );
 
         if (Platform.getInstance().isIOS()) {
             this.clickElementToTheRightUpperCorner(
-                    article_title,
+                    getTitleXpathByName(article_title),
                     "Can't tap on delete article button!"
             );
         }
+        Thread.sleep(5000);
         this.waitForArticleToDissapearByTitle(article_title);
+    }
+
+    public void checkArticleIsStillPresentInList(int hash_code_of_element) throws InterruptedException {
+        List<Integer> hashcodes_of_articles_list = new ArrayList();
+        Thread.sleep(10000);
+        if(Platform.getInstance().isIOS()) {
+           List<WebElement> articles_list =  driver.findElements(By.xpath("//XCUIElementTypeCell"));
+           for(WebElement element:articles_list) {
+               hashcodes_of_articles_list.add(element.hashCode());
+           }
+            assertTrue("Not expected: Second article is not in the list!",hashcodes_of_articles_list.contains(hash_code_of_element));
+        }
+    }
+
+    public int getHashCodeOfArticleElement(String article_title) {
+        return  this.waitForElementPresent(getTitleXpathByName(article_title)+"/..",
+                "Can't find target article with title" + article_title,
+                30
+        ).hashCode();
     }
 
     public void waitForArticleToDissapearByTitle(String article_title) {
         this.waitForElementIsNotPresent(
-                getFolderXpathByName(article_title),
+                getTitleXpathByName(article_title),
                 "Saved article still present with title " + article_title,
-                5
+                30
         );
     }
 
     public void waitForArticleToApearByTitle(String article_title) {
         this.waitForElementPresent(
-                getFolderXpathByName(article_title),
+                getTitleXpathByName(article_title),
                 "Cannot find saved article by title " + article_title,
-                5
+                30
         );
     }
 
@@ -68,7 +95,7 @@ abstract public class MyListPageObject extends MainPageObject {
         String title_in_list = waitForElementPresent(
                 "xpath://*[@text='" + name + "']",
                 "Can't find second's article entry in saved articles list!",
-                5
+                30
         ).getAttribute("text");
 
 /*        waitForElementAndClick(
@@ -80,7 +107,7 @@ abstract public class MyListPageObject extends MainPageObject {
         waitForElementAndClick(
                 "xpath://*android.widget.TextView[@text='" + name + "']",
                 "Can't click on second's article entry in saved articles list!",
-                5
+                30
         );
 
 
@@ -89,7 +116,7 @@ abstract public class MyListPageObject extends MainPageObject {
         String title_on_articles_page = waitForElementPresent(
                 "id:org.wikipedia:id/view_page_title_text",
                 "Can't find " + name + " article's title on the page!",
-                10
+                30
         ).getAttribute("text");
 
         assertEquals("Title on the articles list and title on article's page are not equals!",

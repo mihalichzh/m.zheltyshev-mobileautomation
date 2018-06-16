@@ -212,6 +212,8 @@ public class MainPageObject {
             return By.xpath(locator);
         } else if (by_type.equals("id")) {
             return By.id(locator);
+        } else if (by_type.equals("name")) {
+            return By.name(locator);
         } else {
             throw new IllegalMonitorStateException("Cannot get type of locator " + locator_with_type);
         }
