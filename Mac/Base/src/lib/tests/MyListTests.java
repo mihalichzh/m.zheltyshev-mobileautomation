@@ -132,21 +132,26 @@ public class MyListTests extends CoreTestCase {
         //Открываем список избранных статей
         navigationUI.openMyList();
 
-        //Для Android предварительно заходим в папку с соответствующим названием
+        /*Реализовано две разные проверки для iOS (по наличию элемента статьи в списке после удаления)
+        и Android (по одной из строк в содержании статьи)*/
         if (Platform.getInstance().isAndroid()) {
+            //Для Android предварительно заходим в папку с соответствующим названием
             myListPageObject.openFolderByName(name_of_folder);
-        }
 
-        //Запоминаем hashCode элемента для той статьи, которую не будем удалять (чтобы потом проверить, осталась ли она)
-        //int article_to_stay_hashcode = myListPageObject.getHashCodeOfArticleElement("BASIC");
-        WebElement article_to_stay_element = myListPageObject.getArticleElementByName("BASIC");
+            //Удаляем статью с соответствующим заголовком
+            myListPageObject.swipeByArticleToDelete("Java (programming language)");
 
-        //Удаляем статью с соответствующим заголовком ( - НЕ РАБОТАЕТ)
-        myListPageObject.swipeByArticleToDelete("Java (programming language)");
+            //Проверяем оставшуюся статью в списке по одной из строк в содержании
+            myListPageObject.checkArticleIsStillPresentByContentsItem("BASIC", "IBM PC and compatibles");
+        } else {
+            //В случае iOS запоминаем элемент той статьи, которую не будем удалять (чтобы потом проверить, осталась ли она)
+            WebElement article_to_stay_element = myListPageObject.getArticleElementByName("BASIC");
 
-        //В данном методе я сначала получаю все оставшиеся после удаления элементы-контейнеры для статей, заполняю ArrayList их хешкодами и ищу среди этого списка хешкод статьи, которая должна была остаться
-        //myListPageObject.checkArticleIsStillPresentInList(article_to_stay_hashcode);
-        myListPageObject.checkArticleElementIsStillPresentInList(article_to_stay_element);
+            //Удаляем статью с соответствующим заголовком ( - НЕ РАБОТАЕТ ПОЛНОСТЬЮ В IOS)
+            myListPageObject.swipeByArticleToDelete("Java (programming language)");
+
+            //Для iOS в данном методе я сначала получаю все оставшиеся после удаления элементы-контейнеры для статей, заполняю ими ArrayList и ищу среди этого списка элемент статьи, которая должна была остаться
+            myListPageObject.checkArticleElementIsStillPresentInList(article_to_stay_element);}
     }
 
     @Test
@@ -163,6 +168,31 @@ public class MyListTests extends CoreTestCase {
                 "Can't find element!",
                 20);
         List<WebElement> all_elements = myListPageObject.getListOfElementsByXpath("//XCUIElementTypeButton");
+        System.out.println(all_elements.contains(element_second));
+    }
+
+    @Test
+    public void testWebElementEqualityAndroid() throws InterruptedException{
+        SearchPageObject searchPageObject = SearchPageObjectFactory.get(driver);
+        ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
+        NavigationUI navigationUI = NavigationUIFactory.get(driver);
+        MyListPageObject myListPageObject = MyListsPageObjectFactory.get(driver);
+        MainPageObject mainPageObject = new MainPageObject(driver);
+
+        //Делаем тап по поисковой строке
+        searchPageObject.initSearchInput();
+
+        //Вбиваем запрос
+        searchPageObject.typeSearchLine("Java");
+
+        WebElement element_first = mainPageObject.waitForElementPresent("xpath://*[@text='JavaScript']/../..",
+                "Can't find element!",
+                20);
+        WebElement element_second = mainPageObject.waitForElementPresent("xpath://*[@text='JavaScript']/../..",
+                "Can't find element!",
+                20);
+        List<WebElement> all_elements = myListPageObject.getListOfElementsByXpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']");
+        System.out.println(element_first.equals(element_second));
         System.out.println(all_elements.contains(element_second));
     }
 }

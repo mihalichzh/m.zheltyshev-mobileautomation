@@ -31,7 +31,8 @@ abstract public class MyListPageObject extends MainPageObject {
         super(driver);
     }
 
-    public void openFolderByName(String name_of_folder) {
+    public void openFolderByName(String name_of_folder) throws InterruptedException {
+        Thread.sleep(5000);
         String folder_name_xpath = getFolderXpathByName(name_of_folder);
         this.waitForElementAndClick(
                 folder_name_xpath,
@@ -44,7 +45,7 @@ abstract public class MyListPageObject extends MainPageObject {
         this.waitForArticleToApearByTitle(article_title);
         this.swipeElementToLeft(
                 getTitleXpathByName(article_title),
-                "Can't find saved article with title " +article_title
+                "Can't find saved article with title " + article_title
         );
 
         if (Platform.getInstance().isIOS()) {
@@ -63,13 +64,13 @@ abstract public class MyListPageObject extends MainPageObject {
         List<WebElement> articles_list = driver.findElements(By.xpath(ARTICLE_ITEM_CONTAINER));
         for (WebElement element : articles_list) {
             hashcodes_of_articles_list.add(element.hashCode());
-            }
-            if(Platform.getInstance().isIOS()) {
-                assertTrue("Not expected: Second article is not in the list!", hashcodes_of_articles_list.contains(hash_code_of_element));
-            } else {
-                assertTrue("Not expected: Second article is not in the list!", hashcodes_of_articles_list.contains(hash_code_of_element+3));
-            }
         }
+        if (Platform.getInstance().isIOS()) {
+            assertTrue("Not expected: Second article is not in the list!", hashcodes_of_articles_list.contains(hash_code_of_element));
+        } else {
+            assertTrue("Not expected: Second article is not in the list!", hashcodes_of_articles_list.contains(hash_code_of_element + 3));
+        }
+    }
 
     public void checkArticleElementIsStillPresentInList(WebElement article_element) throws InterruptedException {
         Thread.sleep(10000);
@@ -77,36 +78,36 @@ abstract public class MyListPageObject extends MainPageObject {
         assertTrue("Not expected: Second article is not in the list!", list.contains(article_element));
     }
 
-        public List<WebElement> getListOfElementsByXpath(String xpath) throws InterruptedException{
-            List<Integer> hashcodes_of_articles_list = new ArrayList();
-            Thread.sleep(10000);
-            List<WebElement> articles_list = driver.findElements(By.xpath(xpath));
-            return articles_list;
-        }
+    public List<WebElement> getListOfElementsByXpath(String xpath) throws InterruptedException {
+        List<Integer> hashcodes_of_articles_list = new ArrayList();
+        Thread.sleep(10000);
+        List<WebElement> articles_list = driver.findElements(By.xpath(xpath));
+        return articles_list;
+    }
 
 
     public int getHashCodeOfArticleElement(String article_title) {
-        if(Platform.getInstance().isIOS()){
-        return this.waitForElementPresent(getTitleXpathByName(article_title)+"/..",
-                "Can't find target article with title" + article_title,
-                30
-        ).hashCode();}
-        else {
-            return this.waitForElementPresent(getTitleXpathByName(article_title)+"/../../..",
+        if (Platform.getInstance().isIOS()) {
+            return this.waitForElementPresent(getTitleXpathByName(article_title) + "/..",
+                    "Can't find target article with title" + article_title,
+                    30
+            ).hashCode();
+        } else {
+            return this.waitForElementPresent(getTitleXpathByName(article_title) + "/../../..",
                     "Can't find target article with title" + article_title,
                     30
             ).hashCode();
         }
     }
 
-    public WebElement getArticleElementByName(String article_title){
-        if(Platform.getInstance().isIOS()){
-            return this.waitForElementPresent(getTitleXpathByName(article_title)+"/..",
+    public WebElement getArticleElementByName(String article_title) {
+        if (Platform.getInstance().isIOS()) {
+            return this.waitForElementPresent(getTitleXpathByName(article_title) + "/..",
                     "Can't find target article with title" + article_title,
                     30
-            );}
-        else {
-            return this.waitForElementPresent(getTitleXpathByName(article_title)+"/../../..",
+            );
+        } else {
+            return this.waitForElementPresent(getTitleXpathByName(article_title) + "/../../..",
                     "Can't find target article with title" + article_title,
                     30
             );
@@ -114,11 +115,11 @@ abstract public class MyListPageObject extends MainPageObject {
     }
 
     public void getHashCodeOfArticleElement_debug(String level) {
-            System.out.println(this.waitForElementPresent("xpath://*[@text='BASIC']" + level,
-                    "Can't find target article with title" + level,
-                    30
-            ).hashCode());
-        }
+        System.out.println(this.waitForElementPresent("xpath://*[@text='BASIC']" + level,
+                "Can't find target article with title" + level,
+                30
+        ).hashCode());
+    }
 
     public void waitForArticleToDissapearByTitle(String article_title) {
         this.waitForElementIsNotPresent(
@@ -143,20 +144,11 @@ abstract public class MyListPageObject extends MainPageObject {
                 30
         ).getAttribute("text");
 
-/*        waitForElementAndClick(
-                "xpath://*[@text='" + name + "']",
-                "Can't click on second's article entry in saved articles list!",
-                5
-        );*/
-
         waitForElementAndClick(
                 "xpath://*android.widget.TextView[@text='" + name + "']",
                 "Can't click on second's article entry in saved articles list!",
                 30
         );
-
-
-        //*android.widget.TextView[@text='" + name + "'];
 
         String title_on_articles_page = waitForElementPresent(
                 "id:org.wikipedia:id/view_page_title_text",
@@ -167,6 +159,38 @@ abstract public class MyListPageObject extends MainPageObject {
         assertEquals("Title on the articles list and title on article's page are not equals!",
                 title_in_list,
                 title_on_articles_page);
+    }
+
+    public void checkArticleIsStillPresentByContentsItem(String name, String content_line_to_check) {
+        waitForElementAndClick(
+                "xpath://*[@text='" + name + "']",
+                "Can't click on second's article entry in saved articles list!",
+                30
+        );
+        waitForElementPresent(
+                "xpath://*[@content-desc='Table of Contents']",
+                "Can't find 'Open contents' button!",
+                30);
+
+        waitForElementAndClick(
+                "xpath://*[@content-desc='Table of Contents']",
+                "Can't click on 'Open contents' button!",
+                30
+        );
+
+        waitForElementPresent(
+                "xpath://*[@text='" + content_line_to_check + "']",
+                "Can't find '" + content_line_to_check + "' content line!",
+                30
+        );
+    }
+
+    public void getSubtitleOfArticleByName(String name) {
+        System.out.println(this.waitForElementPresent(getTitleXpathByName(name) + "/../TextView[1]",
+                "Can't find target article with title" + name,
+                30
+        ).getText());
+
     }
 }
 

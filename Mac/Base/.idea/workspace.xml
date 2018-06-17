@@ -17,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyListPageObject.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyListPageObject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lib/ui/MyListPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+            <state relative-caret-position="193">
+              <caret line="176" column="57" lean-forward="true" selection-start-line="176" selection-start-column="57" selection-end-line="176" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#719#720#0" expanded="true" />
@@ -36,8 +36,8 @@
       <file leaf-file-name="MainPageObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="109">
+              <caret line="211" selection-start-line="211" selection-end-line="211" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#543#544#0" expanded="true" />
@@ -50,7 +50,7 @@
       <file leaf-file-name="AndroidMyListsPageObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/ui/android/AndroidMyListsPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="221">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyListTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyListTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/tests/MyListTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="244">
-              <caret line="139" column="85" lean-forward="true" selection-start-line="139" selection-start-column="85" selection-end-line="139" selection-end-column="85" />
+              <caret line="144" column="51" lean-forward="true" selection-start-line="144" selection-start-column="51" selection-end-line="144" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -77,7 +77,7 @@
       <file leaf-file-name="Platform.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/Platform.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
+            <state relative-caret-position="782">
               <caret line="55" column="122" selection-start-line="55" selection-start-column="122" selection-end-line="55" selection-end-column="122" />
             </state>
           </provider>
@@ -86,7 +86,7 @@
       <file leaf-file-name="CoreTestCase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
+            <state relative-caret-position="340">
               <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -98,7 +98,7 @@
       <file leaf-file-name="SearchPageObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/ui/SearchPageObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
+            <state relative-caret-position="816">
               <caret line="55" column="76" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -147,15 +147,15 @@
         <option value="$PROJECT_DIR$/src/lib/Platform.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/android/AndroidMyListsPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/MyListPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/tests/MyListTests.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/MyListPageObject.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="21" />
     <option name="width" value="1920" />
-    <option name="height" value="977" />
+    <option name="height" value="978" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -281,11 +281,11 @@
         <value defaultName="singleModule" />
       </option>
       <envs>
-        <env name="PLATFORM" value="ios" />
+        <env name="PLATFORM" value="android" />
       </envs>
       <patterns />
     </configuration>
-    <configuration name="MyListTests.testWebElementEquality" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MyListTests.testWebElementEqualityAndroid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <extension name="coverage">
         <pattern>
@@ -297,7 +297,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="lib.tests" />
       <option name="MAIN_CLASS_NAME" value="lib.tests.MyListTests" />
-      <option name="METHOD_NAME" value="testWebElementEquality" />
+      <option name="METHOD_NAME" value="testWebElementEqualityAndroid" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" value="" />
@@ -307,7 +307,7 @@
         <value defaultName="singleModule" />
       </option>
       <envs>
-        <env name="PLATFORM" value="ios" />
+        <env name="PLATFORM" value="android" />
       </envs>
       <patterns />
     </configuration>
@@ -326,7 +326,7 @@
         <value defaultName="singleModule" />
       </option>
       <envs>
-        <env name="PLATFORM" value="ios" />
+        <env name="PLATFORM" value="android" />
       </envs>
       <patterns />
     </configuration>
@@ -364,12 +364,12 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.MyListTests.testSaveTwoArticles_ex10_debug" />
-      <item itemvalue="JUnit.MyListTests.testWebElementEquality" />
+      <item itemvalue="JUnit.MyListTests.testWebElementEqualityAndroid" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.MyListTests.testSaveTwoArticles_ex10_debug" />
-        <item itemvalue="JUnit.MyListTests.testWebElementEquality" />
+        <item itemvalue="JUnit.MyListTests.testWebElementEqualityAndroid" />
       </list>
     </recent_temporary>
   </component>
@@ -387,61 +387,61 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 08h 43m 45s.xml">
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 10h 51m 39s.xml">
       <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyListTests_testWebElementEquality - 2018.06.17 at 08h 55m 49s.xml">
-      <configuration name="MyListTests.testWebElementEquality" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyListTests_testWebElementEquality - 2018.06.17 at 08h 56m 34s.xml">
-      <configuration name="MyListTests.testWebElementEquality" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyListTests_testWebElementEquality - 2018.06.17 at 08h 57m 25s.xml">
-      <configuration name="MyListTests.testWebElementEquality" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyListTests_testWebElementEquality - 2018.06.17 at 08h 58m 58s.xml">
-      <configuration name="MyListTests.testWebElementEquality" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyListTests_testWebElementEquality - 2018.06.17 at 09h 01m 50s.xml">
-      <configuration name="MyListTests.testWebElementEquality" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyListTests_testWebElementEquality - 2018.06.17 at 09h 13m 34s.xml">
-      <configuration name="MyListTests.testWebElementEquality" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 09h 27m 58s.xml">
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 11h 00m 08s.xml">
       <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 09h 31m 23s.xml">
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 11h 02m 04s.xml">
       <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 09h 34m 00s.xml">
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 11h 04m 33s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 11h 27m 19s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 11h 30m 38s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 11h 32m 53s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 11h 36m 11s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 11h 38m 48s.xml">
+      <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyListTests_testSaveTwoArticles_ex10_debug - 2018.06.17 at 11h 40m 55s.xml">
       <configuration name="MyListTests.testSaveTwoArticles_ex10_debug" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="977" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.496875" weight="0.29457363" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.496875" weight="0.29209623" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015625" side_tool="true" weight="0.39027148" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4984375" visible="true" weight="0.3820598" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4984375" visible="true" weight="0.35223368" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19635417" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19359875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39756367" />
       <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39756367" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -456,12 +456,12 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4984375" visible="true" weight="0.3831672" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19739583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -471,7 +471,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015625" side_tool="true" weight="0.39027148" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.496875" weight="0.29678848" />
@@ -490,7 +490,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="34" />
+      <option name="time" value="35" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -609,7 +609,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/SearchPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="816">
           <caret line="55" column="76" selection-start-line="55" selection-start-column="76" selection-end-line="55" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -647,7 +647,7 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/Object.java" />
     <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
+        <state relative-caret-position="340">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -657,15 +657,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/Platform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
+        <state relative-caret-position="782">
           <caret line="55" column="122" selection-start-line="55" selection-start-column="122" selection-end-line="55" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/android/AndroidMyListsPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -676,10 +669,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/android/AndroidMyListsPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/tests/MyListTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="144" column="51" lean-forward="true" selection-start-line="144" selection-start-column="51" selection-end-line="144" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="109">
+          <caret line="211" selection-start-line="211" selection-end-line="211" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#543#544#0" expanded="true" />
@@ -690,8 +697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/MyListPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+        <state relative-caret-position="193">
+          <caret line="176" column="57" lean-forward="true" selection-start-line="176" selection-start-column="57" selection-end-line="176" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#719#720#0" expanded="true" />
@@ -699,13 +706,6 @@
             <element signature="e#840#841#0" expanded="true" />
             <element signature="e#869#870#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/tests/MyListTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="139" column="85" lean-forward="true" selection-start-line="139" selection-start-column="85" selection-end-line="139" selection-end-column="85" />
         </state>
       </provider>
     </entry>
