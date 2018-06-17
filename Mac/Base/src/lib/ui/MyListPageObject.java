@@ -54,7 +54,7 @@ abstract public class MyListPageObject extends MainPageObject {
             );
         }
         Thread.sleep(5000);
-        this.waitForArticleToDissapearByTitle(article_title);
+        //this.waitForArticleToDissapearByTitle(article_title);
     }
 
     public void checkArticleIsStillPresentInList(int hash_code_of_element) throws InterruptedException {
@@ -71,6 +71,19 @@ abstract public class MyListPageObject extends MainPageObject {
             }
         }
 
+    public void checkArticleElementIsStillPresentInList(WebElement article_element) throws InterruptedException {
+        Thread.sleep(10000);
+        List<WebElement> list = driver.findElements(By.xpath(ARTICLE_ITEM_CONTAINER));
+        assertTrue("Not expected: Second article is not in the list!", list.contains(article_element));
+    }
+
+        public List<WebElement> getListOfElementsByXpath(String xpath) throws InterruptedException{
+            List<Integer> hashcodes_of_articles_list = new ArrayList();
+            Thread.sleep(10000);
+            List<WebElement> articles_list = driver.findElements(By.xpath(xpath));
+            return articles_list;
+        }
+
 
     public int getHashCodeOfArticleElement(String article_title) {
         if(Platform.getInstance().isIOS()){
@@ -83,6 +96,20 @@ abstract public class MyListPageObject extends MainPageObject {
                     "Can't find target article with title" + article_title,
                     30
             ).hashCode();
+        }
+    }
+
+    public WebElement getArticleElementByName(String article_title){
+        if(Platform.getInstance().isIOS()){
+            return this.waitForElementPresent(getTitleXpathByName(article_title)+"/..",
+                    "Can't find target article with title" + article_title,
+                    30
+            );}
+        else {
+            return this.waitForElementPresent(getTitleXpathByName(article_title)+"/../../..",
+                    "Can't find target article with title" + article_title,
+                    30
+            );
         }
     }
 

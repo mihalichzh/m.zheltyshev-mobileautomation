@@ -31,6 +31,8 @@ public class MainPageObject {
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
+
+
     public WebElement waitForElementAndClick(String locator, String error_msg, long timeoutInSeconds) {
         WebElement element = waitForElementPresent(locator, error_msg, timeoutInSeconds);
         element.click();
